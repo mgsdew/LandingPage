@@ -1,0 +1,294 @@
+﻿
+@{
+    ViewBag.Title = "landing-page2";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    <style>
+        .customButton {
+            background: #0d76bc;
+            color: #ffffff;
+            font-weight: 700;
+            border-radius: 50px;
+            width: 200px !important;
+            height: 40px !important;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            if ($.cookie("name2") != "") {
+                $('#FirstName2').val($.cookie("name2"))
+            }
+            if ($.cookie("address2") != "") {
+                $('#Address2').val($.cookie("address2"))
+            }
+
+            $('#btnSubmit').click(function () {
+
+                if (IsValid()) {
+                    var details = {};
+
+                    details.Id = 0; // $('#Id').val();
+                    details.FirstName = $('#FirstName2').val();
+                    details.Address = $('#Address2').val();
+                    details.HaveAlliance = $("input[name='HaveAlliance']:checked").val();
+                    details.TakingMedications = $("input[name='TakingMedications']:checked").val();
+                    $.ajax({
+                        url: '@Url.Action("LandingPage2", "Home")', // 'Home/LandingPage2',
+                        type: "post",
+                        dataType: "json",
+                        data: details,
+                        success: function (response, textStatus, jqXHR) {
+                            alert(response.val);
+                            $.removeCookie("address2");
+                            $.removeCookie("name2");
+                            $("#btnSubmit").attr("disabled", "disabled");
+                            location.reload();
+                        },
+                        error: function (jqXHR, textStatus, errorThrown) {
+                            alert('Error - ' + errorThrown);
+                            //alert("Some information is missing, please complete the entire form to continue..");
+                        }
+                    });
+                }
+            });
+        });
+
+        function IsValid() {
+            if ($('#FirstName2').val() == '') {
+                alert("Please provide your First Name")
+                return false;
+            }
+            if ($('#Address2').val() == '') {
+                alert("Please provide the Email Address or Phone")
+                return false;
+            }
+            return true;
+        }
+
+        function SetNameCookie() {
+            $.cookie('name2', $('#FirstName2').val());
+        }
+
+        function SetAddressCookie() {
+            $.cookie('address2', $('#Address2').val());
+        }
+
+    </script>
+}
+
+<main role="main" id="landing-page2">
+
+    <div id="intro">
+        <div class="content">
+            <h1 class="section-title">Making medication management easy</h1>
+            <h3 class="section-title">Put in your details to get started.</h3>
+            <form>
+                <input type="text" id="FirstName2" placeholder="First Name" onchange="SetNameCookie()">
+                <input type="text" id="Address2" placeholder="Email Address or Phone" onchange="SetAddressCookie()">
+                <p>
+                    Have an Alliance Pharmacy Team Member reach out?
+                    <input type="radio" id="yes" name="HaveAlliance" value="yes">
+                    <label for="yes">Yes</label>
+
+                    <input type="radio" id="no" name="HaveAlliance" value="no">
+                    <label for="yes">No</label>
+                </p>
+
+
+                <p>
+                    Are you currently taking multiple prescription medications?
+                    <input type="radio" id="yes" name="TakingMedications" value="yes">
+                    <label for="yes">Yes</label>
+
+                    <input type="radio" id="no" name="TakingMedications" value="no">
+                    <label for="yes">No</label>
+                </p>
+                <input type="button" class="btn customButton" id="btnSubmit" value="Submit">
+            </form>
+        </div>
+    </div>
+
+    <div id="info">
+
+        <section class="section-1">
+
+            <div class="inner">
+                <h2 class="section-title">Forget pharmacy lines.</h2>
+                <h3 class="section-title">Alliance MedPack is changing the way you receive medication.</h3>
+
+                <div class="left">
+
+                    <a href="">
+                        <div class="button">Introducing MedPack <div class="arrow" style="font-size:15px; margin-top:5px; margin-left: 20px; display:inline">▶</div></div>
+                    </a>
+                    <div class="video"><img src="~/Content/images/video-placeholder2.png"></div>
+
+                </div>
+
+                <div class="right">
+
+                    <h2>Simple, Clear, and Convenient</h2>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="section-2">
+            <h2 class="section-title">Getting started is easy</h2>
+            <h3 class="section-title">We take care of everything.</h3>
+
+            <div class="inner">
+
+                <div class="block">
+                    <img src="~/Content/images/transfer-icon.png">
+                    <p>1. <span>Transfer</span> your prescriptions</p>
+                </div>
+
+                <div class="block">
+                    <img src="~/Content/images/organize-icon.png">
+                    <p>1. We <span>organize</span> your medications</p>
+                </div>
+
+                <div class="block">
+                    <img src="~/Content/images/deliver-icon.png">
+                    <p>1. We <span>deliver</span> right to your door</p>
+                </div>
+
+                <div class="button">Send me a sample MedPack</div>
+
+            </div>
+        </section>
+
+        <section class="section-3">
+
+            <div class="inner">
+
+                <div class="left">
+                    <h2>Just What The Doctor Ordered</h2>
+                    <h3>Your MedPack arrives ready to use as your doctor instructed.</h3>
+
+                </div>
+
+                <div class="right">
+                    <img src="~/Content/images/medpack.png">
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <section class="section-4">
+            <div class="left">
+                <img src="~/Content/images/sortedmeds.png">
+            </div>
+            <div class="right">
+                <h2>Set & Ready</h2>
+                <h3>Your medications are sorted based on when you need to take them throughout the day.</h3>
+
+            </div>
+
+        </section>
+
+
+        <section class="section-5">
+
+            <div class="inner">
+
+                <div class="left">
+                    <h2>Clear and Convenient</h2>
+                    <h3>Each individual MedPack clearly shows the date, time of day, and the names of your medications.</h3>
+
+                </div>
+
+                <div class="right">
+                    <img src="~/Content/images/prescription.png">
+                </div>
+
+            </div>
+
+        </section>
+        <section class="section-6">
+
+            <div class="left">
+                <img src="~/Content/images/mantakingprescription.png">
+            </div>
+
+
+            <div class="right">
+                <h2>Take it Right</h2>
+                <h3>Keeping you on track by ensuring the right medications are taken at the right time.</h3>
+
+            </div>
+        </section>
+
+        <section class="section-7">
+
+            <h2 class="section-title">Overy XYZ+ Happy Customers</h2>
+
+            <div class="inner">
+
+                <div class="blocks">
+
+                    <div class="block">
+                        <div class="content">
+                            I have been recommending your service to friends and family. I have been pleased with every part of the service so far. It is very convenient and the MedPacks keep us on track with our medications. <span>- Chris G.</span>
+                        </div>
+                        <div class="background"><img src="~/Content/images/review1bg.png"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="content">Great customer service! The MedPack is a good way to manage our medication. We were away for two weeks and it was so easy to pack our meds - We used to use plastic med packs, they were bulky. It also has saved time - no longer need to fill plastic med packs. <span>- Marlene B.</span></div>
+                        <div class="background"><img src="~/Content/images/review2bg.png"></div>
+                    </div>
+
+                    <div class="block">
+                        <div class="content">
+                            No complaints at all - everything running smoothly. Your stff are nice to talk to - informative and helpful. Pharmacist advice very good when needed.
+
+                            MedPacks easy to use and understand. <span>- Dennis M.</span>
+                        </div>
+                        <div class="background"><img src="~/Content/images/review3bg.png"></div>
+                    </div>
+
+                </div>
+
+                <p>Your MedPack arrives ready to use as your doctor instructed. They are sorted based on when you need to take them throughout the day.</p>
+
+                <div class="reviews-bg">
+                    <img src="~/Content/images/reviewsbg.png">
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="section-8">
+
+            <h2 class="section-title">Our Proud Partners</h2>
+
+
+            <ul>
+                <li><img src="~/Content/images/sleepcountry2.png"></li>
+                <li><img src="~/Content/images/challenger.png"></li>
+                <li><img src="~/Content/images/smusa.png"></li>
+                <li><img src="~/Content/images/tsc.png"></li>
+
+                <li><img src="~/Content/images/trent2.png"></li>
+                <li><img src="~/Content/images/toshiba2.png"></li>
+                <li><img src="~/Content/images/toromont2.png"></li>
+                <li><img src="~/Content/images/autodata2.png"></li>
+            </ul>
+
+
+        </section>
+
+        <section class="section-9">
+            <img src="~/Content/images/manwomansmiling.png">
+        </section>
+
+</main>
+
+

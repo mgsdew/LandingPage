@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="53px" height="36px" viewBox="0 0 53 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.2 (67145) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 25</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Alliance-ShopEssentials" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round">
+        <g id="ALLIANCE-SHOPPING-SpecificProduct" transform="translate(-616.000000, -1305.000000)" stroke="#FEFEFE" stroke-width="2">
+            <g id="FOOTER" transform="translate(0.000000, 927.000000)">
+                <g id="Shipping" transform="translate(617.000000, 345.000000)">
+                    <g id="Group-25" transform="translate(0.000000, 33.000000)">
+                        <path d="M34,10 L42.4395205,10 C43.1418987,10 43.7994075,10.3451068 44.1957013,10.9215068 L47.812549,17.3889509 L48.8749804,17.3889509 C50.070451,17.3889509 51,18.1720961 51,19.7205336 L51,26.8858425 C51,28.051076 50.0480163,29 48.8749804,29 L47.812549,29" id="Stroke-1"></path>
+                        <path d="M19.1250196,1 L31.9501287,1 C33.0822174,1 34,1.94886265 34,3.11928879 L34,30 L17,30" id="Stroke-3"></path>
+                        <path d="M7,30 L0,30" id="Stroke-5"></path>
+                        <path d="M47,30.5 C47,32.9850498 44.9850498,35 42.5,35 C40.0147841,35 38,32.9850498 38,30.5 C38,28.0147841 40.0147841,26 42.5,26 C44.9850498,26 47,28.0147841 47,30.5 Z" id="Stroke-7"></path>
+                        <path d="M16,30.5 C16,32.9850498 13.9852159,35 11.5,35 C9.01495017,35 7,32.9850498 7,30.5 C7,28.0147841 9.01495017,26 11.5,26 C13.9852159,26 16,28.0147841 16,30.5 Z" id="Stroke-9"></path>
+                        <path d="M16.3928571,30.1014493 L38,30.1014493" id="Stroke-11"></path>
+                        <polyline id="Stroke-13" points="38 20 43.1406639 20 45.1971468 18 50 18"></polyline>
+                        <path d="M1,18 L19,18" id="Stroke-15"></path>
+                        <path d="M4,7 L28,7" id="Stroke-17"></path>
+                        <path d="M10,12 L26,12" id="Stroke-19"></path>
+                        <path d="M6,12 L4,12" id="Stroke-21"></path>
+                        <path d="M14,1 L12,1" id="Stroke-23"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

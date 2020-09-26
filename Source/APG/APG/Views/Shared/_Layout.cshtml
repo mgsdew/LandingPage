@@ -1,0 +1,243 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - APG E-Prescription API</title>
+    <link rel="stylesheet" href="~/Content/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/Content/style.css" />
+
+    <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" type="text/css">
+
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.cookie.js"></script>
+    <link href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" rel="stylesheet" type="text/css">
+
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+            n.queue = []; t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '1665064653668919');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+             src="https://www.facebook.com/tr?id=1665064653668919&ev=PageView&noscript=1" />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
+</head>
+
+<script>
+    (function (w, d, s, l, i) {
+        w[l] = w[l] || []; w[l].push({
+            'gtm.start':
+                new Date().getTime(), event: 'gtm.js'
+        }); var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-5RCSW6M');
+</script>
+
+<body>
+
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5RCSW6M"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+
+    <header>
+        <section class="top-bar full-width">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <ul class="text-left">
+                            <li>
+                                <a href="/for-companies">For Companies</a>
+                            </li>
+                            <li>
+                                <a href="/for-benefit-advisors">For Benefit Advisors</a>
+                            </li>
+                            <li>
+                                <a href="/for-healthcare-advisors">For Healthcare Providers</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-md-6">
+                        <ul class="text-right">
+                            <li>
+                                <a href="tel:1-877-796-7979">
+                                    Call us 1.877.796.7979
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/apg/register-rx">
+                                    Try Our Prescription Services
+                                </a>
+                            </li>
+                            <partial name="_LoginPartial" />
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/Content/images/apg-logo.png" width="180" alt="APG API Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse">
+                    <ul class="navbar-nav">
+
+                        <li class="menu-link">
+                            <a href="/about-us-2">About Us</a>
+                        </li>
+                        <li class="menu-link">
+                            <a href="/how-it-works">How It Works</a>
+                        </li>
+                        <li class="menu-link">
+                            <a href="/medpack">MedPack</a>
+                        </li>
+                        <li class="menu-link">
+                            <a href="/support">Support</a>
+                        </li>
+                        <li class="menu-link">
+                            <a href="/resources">Resources</a>
+                        </li>
+                        <li class="menu-link">
+                            <a href="/home">Shop</a>
+                        </li>
+                        <li class="menu-link">
+                            <a asp-area="" asp-controller="api-docs">API Documentation</a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <section class="sign-up-for-medpack">
+            <div class="container">
+                <div class="col-lg-5ths sign-up-for-medpack-item">
+                    <p class="sign-up-for-medpack-item-title">Signing up takes less than 3 minutes</p>
+                </div>
+                <div class="col-lg-5ths sign-up-for-medpack-item">
+                    <a href="/register-for-an-account">
+                        <button class="apg-btn apg-btn-green">Get Started</button>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <footer id="footer" class="apg-footer">
+            <div class="apg-footer-info">
+                <div class="container">
+                    <div class="row text-left">
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="logo">
+                                <img src="~/Content/images/apg-logo-white.svg" alt="Logo" draggable="false">
+                            </div>
+                            <ul class="social-media-lists hide-on-desktop">
+                                <li class="social-media-item">
+                                    <a href="https://www.facebook.com/apgrx" target="_blank" rel="noopener">
+                                        <img src="~/Content/images/facebook-icon.svg" alt="Facebook Icon">
+                                    </a>
+                                </li>
+                                <li class="social-media-item">
+                                    <a href="https://www.youtube.com/channel/UC1dobVf7vZlPfT39enJntWw" target="_blank" rel="noopener">
+                                        <img src="~/Content/images/youtube-icon.svg" alt="Youtube Icon">
+                                    </a>
+                                </li>
+                                <li class="social-media-item">
+                                    <a href="https://twitter.com/apgrx" target="_blank" rel="noopener">
+                                        <img src="~/Content/images/twitter-icon.svg" alt="Twitter Icon">
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 east-info">
+                            <p class="pharmacy-name">Alliance Pharmacy Group Inc. (East)</p>
+                            <p class="pharmacy-body">Serving NB, NL, NS, ON, PE</p>
+                            <p class="pharmacy-address">20 Furbacher Lane, Unit 2 Aurora, ON <br class="hidden footer-break">L4G 6W1</p>
+                            <p class="pharmacy-body">Toll Free: 1.877.796.7979</p>
+                            <p class="pharmacy-body">Toll Free Fax: 1.877.835.8329</p>
+                            <p class="pharmacy-body">Hours: Mon - Fri, 8:30am - 5:00pm EST</p>
+                            <p class="pharmacy-certificate">Ontario College of Pharmacists Certificate <br>of Accreditation #302111</p>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 west-info">
+                            <p class="pharmacy-name">Alliance Pharmacy Group Inc. (West)</p>
+                            <p class="pharmacy-body">Serving AB, BC, NT, YT</p>
+                            <p class="pharmacy-address">21320 Gordon Way, #165 Richmond, BC <br class="hidden footer-break">V6W 1J8</p>
+                            <p class="pharmacy-body">Toll Free: 1.855.370.7979</p>
+                            <p class="pharmacy-body">Toll Free Fax: 1.855.295.7174</p>
+                            <p class="pharmacy-body">Hours: Mon - Fri, 9:00am - 5:00pm PST</p>
+                            <p class="pharmacy-certificate">College of Pharmacists of BC <br>PharmaCare Code U62</p>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 central-info">
+                            <p class="pharmacy-name">Alliance Pharmacy Group Inc. (Central)</p>
+                            <p class="pharmacy-body">Serving MB, NU, SK</p>
+                            <p class="pharmacy-address">975 St. James St. Winnipeg, MB <br class="hidden footer-break">R3H 0X2</p>
+                            <p class="pharmacy-body">Toll Free Telephone: 1-866-318-0047 </p>
+                            <p class="pharmacy-body">Toll Free Fax: 1-833-815-5756</p>
+                            <p class="pharmacy-body">Hours: Mon - Fri, 9:00am - 5:00pm CST</p>
+                            <p class="pharmacy-certificate">College of Pharmacists of Manitoba <br>License # 35367</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-5 col-lg-5">
+                            <p class="owner-name">Owner: Alliance Pharmacy Group Inc. Manager: Shital Patel R.Ph</p>
+                        </div>
+                        <div class="col-xs-12 col-md-7 col-lg-7">
+                            <ul class="copyright-links">
+                                <li class="copyright-item">
+                                    <a href="/pharmacy-policies">Pharmacy Policies</a>
+                                </li>
+                                <li class="copyright-item">
+                                    <a href="/pharmacy-partners">Pharmacy Partners</a>
+                                </li>
+                                <li class="copyright-item">
+                                    <a href="/accessiblity">Accessiblity</a>
+                                </li>
+                                <li class="copyright-item">
+                                    <a href="/privacy-policy">Privacy Policy</a>
+                                </li>
+                                <li class="copyright-item">
+                                    <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+                                </li>
+                                <li class="copyright-item">
+                                    <a href="/ContactUs">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

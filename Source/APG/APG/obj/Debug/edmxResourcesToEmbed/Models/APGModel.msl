@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="APGDBModelStoreContainer" CdmEntityContainer="APGDBEntities">
+    <EntitySetMapping Name="UserDetails_1">
+      <EntityTypeMapping TypeName="APGDBModel.UserDetails_1">
+        <MappingFragment StoreEntitySet="UserDetails_1">
+          <ScalarProperty Name="HavePrescriptions" ColumnName="HavePrescriptions" />
+          <ScalarProperty Name="HaveAlliance" ColumnName="HaveAlliance" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserDetails_2">
+      <EntityTypeMapping TypeName="APGDBModel.UserDetails_2">
+        <MappingFragment StoreEntitySet="UserDetails_2">
+          <ScalarProperty Name="TakingMedications" ColumnName="TakingMedications" />
+          <ScalarProperty Name="HaveAlliance" ColumnName="HaveAlliance" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
